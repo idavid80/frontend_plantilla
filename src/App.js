@@ -1,6 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+-app.get('/', function (req, res) {
++app.get('/*', function (req, res) {
+   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+ })
+});
+
+
 function App() {
   return (
     <div className="App">
